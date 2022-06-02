@@ -14,7 +14,7 @@ def encrypt(text,s):
     return result
 
 # Checking function
-text = "CaesarCIPHERAlgorithm"
+text = "CAESARCIPHERALGORITHM"
 s = 64
 print ("Plain text : " + text)
 print ("Shift : " + str(s))
