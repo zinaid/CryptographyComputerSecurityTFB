@@ -8,9 +8,9 @@ Koristeći Python implementirati Cezar Cipher algoritam. Napraviti funkciju encr
 
 Koristeći Python napraviti program koji čita plain tekst i ključ iz fajlova plain.txt i key.txt. Plain tekst i ključ su spremljeni u varijable plain i key i koriste se kao parametri u funkciju encrypt(plain, key) koja implementira DES algoritam. Potrebno je imati i funkcije checkKey(key) koja provjerava da li je ključ 8,16 i 24. Napraviti i funkciju checkPlain(plain) koja provjerava da li je plain djeljiv sa 8. Ove funkcije se zovu u encrypt(plain, key) i ako neki od ovih uslova nije zadovoljan ne radi se enkripcija i ispisuje odgovarajuća poruka, suprotno se radi.
 
-3. Using Python programming language and Transposition algorithm encrypt this message: <b>"Python is really fun"</b>.
+3. Using Python programming language and Transposition algorithm encrypt this message: <b>"Python is really fun"</b>. For a shift use 7.
 
-Koristeći Python i Transpozicijski algoritam enkriptovati poruku "Python is really fun". 
+Koristeći Python i Transpozicijski algoritam enkriptovati poruku "Python is really fun". Pomjeraj je 7.
 
 4. Create an automated tests script that checks the correctnes of a OneTimePad algorithm by creating 20 random messages and checking the result of the decryption with provided message. If any of the checks fails exit from the program and write "Not working", else write each message and write "Working". The tests should be recreated every time (random.seed).
 
