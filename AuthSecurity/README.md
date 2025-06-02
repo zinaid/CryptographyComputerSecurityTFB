@@ -468,3 +468,44 @@ Security Tips
 * Always use slow, salted hashes like pbkdf2:sha256, bcrypt, or argon2.
 
 * Use trusted libraries for hashing and verification.
+
+### SQL INJECTION
+
+SQL Injection (SQLi) is a code injection technique where an attacker can execute arbitrary SQL queries by manipulating user input in a vulnerable application.
+
+When user input is not properly sanitized, attackers can inject SQL statements that the database will execute. For example:
+
+```sql
+-- Vulnerable query
+SELECT * FROM users WHERE username = '$username' AND password = '$password';
+```
+
+If an attacker inputs ' OR '1'='1, the query becomes:
+```sql
+SELECT * FROM users WHERE username = '' OR '1'='1' AND password = '';
+```
+
+Which always returns true — effectively bypassing authentication.
+
+To solve or prevent SQL Injection, you must always ensure that user input is never directly embedded into SQL queries. Here are the most effective techniques:
+
+* Use Parameterized Queries (aka Prepared Statements)
+* Use an ORM (Object Relational Mapper)
+* Whitelist Input (Validation)
+* Escaping Inputs (Last Resort)
+* Least Privilege Principle
+
+
+What Problems Can SQL Injection Cause?
+* Bypass Authentication Log in as any user without knowing the password.
+
+* Data Theft Extract sensitive data like usernames, passwords, credit cards.
+
+* Data Corruption or Deletion DROP TABLE users; or UPDATE users SET password = 'hacked'.
+
+* Full System Compromise In some DBs (like MySQL, MSSQL), attackers can run OS-level commands.
+
+* Blind Injection Attacks Even if errors aren't shown, attackers can infer data using timing or boolean logic.
+
+* Loss of Reputation or Legal Action Failing to secure user data can lead to fines (e.g., GDPR) and loss of user trust.
+
